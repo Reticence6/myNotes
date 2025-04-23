@@ -11,6 +11,13 @@ export default defineConfig({
         outline: [1, 4],
         nav: [
             { text: 'Home', link: '/' },
+            {
+                text: '机器学习',
+                items: [
+                    { text: '机器学习', link: '/ML/机器学习/1.机器学习入门' },
+                    { text: '大模型', link: '/ML/LLM/1.语言模型基础' },
+                ]
+            },
             { text: 'Examples', link: '/markdown-examples' }
         ],
 
@@ -30,7 +37,7 @@ export default defineConfig({
         ],
 
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+            { icon: 'github', link: 'https://github.com/Reticence6' }
         ],
 
         // 底部配置
@@ -63,4 +70,7 @@ export default defineConfig({
             }
         },
     },
+    markdown: {
+        math: true
+    }
 })
