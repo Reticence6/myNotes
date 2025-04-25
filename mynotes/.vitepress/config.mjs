@@ -23,31 +23,33 @@ export default defineConfig({
             { text: 'Examples', link: '/examples/markdown-examples' }
         ],
 
-        sidebar: [{
+        sidebar: {
+            '/examples/': [{
                 text: 'Examples',
                 collapsed: false,
                 items: [
                     { text: 'Markdown Examples', link: '/examples/markdown-examples' },
                     { text: 'Runtime API Examples', link: '/examples/api-examples' }
                 ]
-            },
-            {
+            }],
+            '/ML/机器学习': [{
                 text: '机器学习',
                 collapsed: false,
                 items: [
-                    { text: '1.机器学习入门', link: '/ML/机器学习/1.机器学习入门.md' },
-                    { text: '2.预备知识', link: '/ML/机器学习/2.预备知识.md' },
-                    { text: '3.线性神经网络', link: '/ML/机器学习/3.线性神经网络.md' },
+                    { text: '1.机器学习入门', link: '/ML/机器学习/1.机器学习入门' },
+                    { text: '2.预备知识', link: '/ML/机器学习/2.预备知识' },
+                    { text: '3.线性神经网络', link: '/ML/机器学习/3.线性神经网络' },
+                    { text: '68.Transformer', link: '/ML/机器学习/68.Transformer.md' },
                 ]
-            },
-            {
+            }],
+            '/ML/LLM': [{
                 text: 'LLM',
+                collapsed: false,
                 items: [
-                    { text: '1.语言模型基础', link: '/ML/LLM/1.语言模型基础.md' }
+                    { text: '1.语言模型基础', link: '/ML/LLM/1.语言模型基础' }
                 ]
-            }
-        ],
-
+            }],
+        },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/Reticence6' }
         ],
