@@ -46,7 +46,13 @@ export default defineConfig({
                 text: 'LLM',
                 collapsed: false,
                 items: [
-                    { text: '1.语言模型基础', link: '/ML/LLM/1.语言模型基础' }
+                    { 
+                        text: '一、语言模型基础', 
+                        items:[
+                            { text: '1.语言模型基础', link: '/ML/LLM/一、语言模型基础/1.语言模型基础'},
+                            { text: '2.RNN与Transformer', link: '/ML/LLM/一、语言模型基础/2.RNN与Transformer'} 
+                        ]
+                    }
                 ]
             }],
         },
