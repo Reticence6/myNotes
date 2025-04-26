@@ -49,7 +49,8 @@ export default defineConfig({
                     text: '一、语言模型基础',
                     items: [
                         { text: '1.基本概念', link: '/ML/LLM/1-1.语言模型基础' },
-                        { text: '2.RNN与Transformer', link: '/ML/LLM/1-2.RNN与Transformer' }
+                        { text: '2.RNN与Transformer', link: '/ML/LLM/1-2.RNN与Transformer' },
+                        { text: '3.语言模型的采样与评测', link: '/ML/LLM/1-3.语言模型的采样' },
                     ]
                 }]
             }],
