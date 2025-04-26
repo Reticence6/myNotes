@@ -17,7 +17,7 @@ export default defineConfig({
                 text: '机器学习',
                 items: [
                     { text: '机器学习', link: '/ML/机器学习/1.机器学习入门' },
-                    { text: '大模型', link: '/ML/LLM/1.语言模型基础' },
+                    { text: '大模型', link: '/ML/LLM/1-1.语言模型基础' },
                 ]
             },
             { text: 'Examples', link: '/examples/markdown-examples' }
@@ -45,15 +45,13 @@ export default defineConfig({
             '/ML/LLM': [{
                 text: 'LLM',
                 collapsed: false,
-                items: [
-                    { 
-                        text: '一、语言模型基础', 
-                        items:[
-                            { text: '1.语言模型基础', link: '/ML/LLM/一、语言模型基础/1.语言模型基础'},
-                            { text: '2.RNN与Transformer', link: '/ML/LLM/一、语言模型基础/2.RNN与Transformer'} 
-                        ]
-                    }
-                ]
+                items: [{
+                    text: '一、语言模型基础',
+                    items: [
+                        { text: '1.基本概念', link: '/ML/LLM/1-1.语言模型基础' },
+                        { text: '2.RNN与Transformer', link: '/ML/LLM/1-2.RNN与Transformer' }
+                    ]
+                }]
             }],
         },
         socialLinks: [
