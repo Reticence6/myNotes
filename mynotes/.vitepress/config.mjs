@@ -52,10 +52,14 @@ export default defineConfig({
                         { text: '2.RNN与Transformer', link: '/ML/LLM/1-2.RNN与Transformer' },
                         { text: '3.语言模型的采样与评测', link: '/ML/LLM/1-3.语言模型的采样' },
                     ]
-                },{
+                }, {
                     text: '二、大语言模型架构',
                     items: [
                         { text: '1.大模型架构概述', link: '/ML/LLM/2-1.大模型架构.md' },
+                        { text: '2.基于Encoder-only架构的语言模型', link: '/ML/LLM/2-2.Encoder-only.md' },
+                        { text: '3.基于Encoder-Decoder架构的语言模型', link: '/ML/LLM/2-3.Encoder-Decoder.md' },
+                        { text: '4.基于Decoder-only架构的语言模型', link: '/ML/LLM/2-4.Decoder-only.md' },
+                        { text: '5.Mamba模型', link: '/ML/LLM/2-5.Mamba.md' }
                     ]
                 }]
             }],
