@@ -52,6 +52,12 @@ export default defineConfig({
                         { text: '2.RNN与Transformer', link: '/ML/LLM/1-2.RNN与Transformer' },
                         { text: '3.语言模型的采样与评测', link: '/ML/LLM/1-3.语言模型的采样' },
                     ]
+                }],
+                items: [{
+                    text: '二、大语言模型架构',
+                    items: [
+                        { text: '1.大模型架构概述', link: '/ML/LLM/2-1.大模型架构.md' },
+                    ]
                 }]
             }],
         },
