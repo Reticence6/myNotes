@@ -9,10 +9,11 @@ hero:
   actions:
     - theme: brand
       text: Markdown Examples
-      link: /markdown-examples
+      link: /examples/markdown-examples
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: LLM
+      link: /ML/LLM/1-1.语言模型基础
+      
 
 features:
   - title: Feature A
