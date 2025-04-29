@@ -23,6 +23,12 @@ export default defineConfig({
             { text: 'Examples', link: '/examples/markdown-examples' }
         ],
 
+        // 自定义文档页脚的上一页和下一页文本
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
+        },
+
         sidebar: {
             '/examples/': [{
                 text: 'Examples',
