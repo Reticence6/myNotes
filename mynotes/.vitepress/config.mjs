@@ -67,6 +67,14 @@ export default defineConfig({
                         { text: '4.基于Decoder-only架构的语言模型', link: '/ML/LLM/2-4.Decoder-only.md' },
                         { text: '5.Mamba模型', link: '/ML/LLM/2-5.Mamba.md' }
                     ]
+                }, {
+                    text: '三、Prompt工程',
+                    items: [
+                        { text: '1.Prompt工程概述', link: '/ML/LLM/3-1.Prompt工程简介.md' },
+                        { text: '2.上下文学习', link: '/ML/LLM/3-2.上下文学习.md' },
+                        { text: '3.思维链', link: '/ML/LLM/3-3.思维链.md' },
+                        { text: '4.Prompt技巧及应用', link: '/ML/LLM/3-4.Prompt技巧及应用.md' },
+                    ]
                 }]
             }],
         },
