@@ -75,6 +75,14 @@ export default defineConfig({
                         { text: '3.思维链', link: '/ML/LLM/3-3.思维链.md' },
                         { text: '4.Prompt技巧及应用', link: '/ML/LLM/3-4.Prompt技巧及应用.md' },
                     ]
+                }, {
+                    text: '四、参数高效微调',
+                    items: [
+                        { text: '1.参数高效微调概述', link: '/ML/LLM/4-1.参数高效微调简介.md' },
+                        { text: '2.参数附加方法', link: '/ML/LLM/4-2.参数附加方法.md' },
+                        { text: '3.参数选择方法', link: '/ML/LLM/4-3.参数选择方法.md' },
+                        { text: '4.低秩适配方法', link: '/ML/LLM/4-4.低秩适配方法.md' },
+                    ]
                 }]
             }],
         },
