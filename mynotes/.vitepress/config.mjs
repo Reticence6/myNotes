@@ -20,6 +20,12 @@ export default defineConfig({
                     { text: '大模型', link: '/ML/LLM/1-1.语言模型基础' },
                 ]
             },
+            { 
+                text: '研究生学习', 
+                items:[
+                    { text:'论文笔记', link: '/postgraduate/paperNotes/20250415' }
+                ]
+            },
             { text: 'Examples', link: '/examples/markdown-examples' }
         ],
 
@@ -85,6 +91,15 @@ export default defineConfig({
                     ]
                 }]
             }],
+            '/postgraduate/paperNotes': [{
+                text: '论文笔记',
+                collapsed: false,
+                items: [
+                    { items: '20250415', link: '/postgraduate/paperNotes/20250415'},
+                    { items: '20250422', link: '/postgraduate/paperNotes/20250422'},
+                    { items: '20250429', link: '/postgraduate/paperNotes/20250429'},
+                ]
+            }]
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/Reticence6' }
