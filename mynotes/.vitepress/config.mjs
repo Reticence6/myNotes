@@ -89,6 +89,20 @@ export default defineConfig({
                         { text: '3.参数选择方法', link: '/ML/LLM/4-3.参数选择方法.md' },
                         { text: '4.低秩适配方法', link: '/ML/LLM/4-4.低秩适配方法.md' },
                     ]
+                }, {
+                    text: '五、模型编辑',
+                    items: [
+                        {text: '1.模型编辑的定义与性质', link:'/ML/LLM/5-1.模型编辑的定义与性质'},
+                        {text: '2.T-Patcher和ROME', link:'/ML/LLM/5-2.T-Patcher和ROME'}
+                    ]
+                },{
+                    text: '六、检索增强生成RAG',
+                    items: [
+                        {text: '1.RAG简介', link:'/ML/LLM/6-1.检索增强生成(RAG)简介'},
+                        {text: '2.RAG知识检索', link:'/ML/LLM/6-2.RAG知识检索'},
+                        {text: '3.RAG生成增强', link:'/ML/LLM/6-3.RAG生成增强'},
+                        {text: '4.RAG降本增效', link:'/ML/LLM/6-4.RAG降本增效'},
+                    ]
                 }]
             }],
             '/postgraduate/paperNotes': [{
