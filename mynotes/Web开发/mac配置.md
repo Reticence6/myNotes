@@ -185,7 +185,7 @@ Maven 阿里云私服是用于在团队或组织内部管理和托管项目依�
    </mirror>
    ```
 
-   <img src="./image/1-3-mvn-mirror.png" alt="image-20250423212948022" style="zoom:67%;" />
+   <img src="./images/1-3-mvn-mirror.png" alt="image-20250423212155661" style="zoom: 50%;" />
 
 4. 可以通过`mvn help:system`命令查看是否配置成功
 
