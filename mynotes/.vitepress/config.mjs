@@ -20,16 +20,16 @@ export default defineConfig({
                     { text: '大模型', link: '/ML/LLM/1-1.语言模型基础' },
                 ]
             },
-            { 
-                text: '研究生学习', 
-                items:[
-                    { text: '论文笔记', link: '/postgraduate/paperNotes/20250415.pdf' }
-                ]
-            },
+            // { 
+            //     text: '研究生学习', 
+            //     items:[
+            //         { text: '论文笔记', link: '/postgraduate/paperNotes/20250415.pdf' }
+            //     ]
+            // },
             {
                 text: 'Web开发',
                 items:[
-                    { text: 'SpringBoot+Vue', link: '/Web开发/mac配置'}
+                    { text: 'SpringBoot+Vue', link: '/Web开发/SpringBoot+Vue/1.SpringBoot介绍'}
                 ]
             },
             { text: 'Examples', link: '/examples/markdown-examples' }
