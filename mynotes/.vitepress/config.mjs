@@ -23,7 +23,13 @@ export default defineConfig({
             { 
                 text: '研究生学习', 
                 items:[
-                    { text:'论文笔记', link: '/postgraduate/paperNotes/20250415' }
+                    { text: '论文笔记', link: '/postgraduate/paperNotes/20250415.pdf' }
+                ]
+            },
+            {
+                text: 'Web开发',
+                items:[
+                    { text: 'SpringBoot+Vue', link: '/Web开发/mac配置'}
                 ]
             },
             { text: 'Examples', link: '/examples/markdown-examples' }
@@ -109,11 +115,23 @@ export default defineConfig({
                 text: '论文笔记',
                 collapsed: false,
                 items: [
-                    { items: '20250415', link: '/postgraduate/paperNotes/20250415'},
-                    { items: '20250422', link: '/postgraduate/paperNotes/20250422'},
-                    { items: '20250429', link: '/postgraduate/paperNotes/20250429'},
+                    { items: '20250415', link: '/postgraduate/paperNotes/20250415.pdf'},
+                    { items: '20250422', link: '/postgraduate/paperNotes/20250422.pdf'},
+                    { items: '20250429', link: '/postgraduate/paperNotes/20250429.pdf'},
                 ]
-            }]
+            }],
+            '/Web开发/SpringBoot+Vue': [{
+                text: 'SpringBoot+Vue',
+                collapsed: false,
+                items: [
+                    { text: 'mac配置', link: '/Web开发/mac配置' },
+                    { text: '1.SpringBoot介绍', link: '/Web开发/SpringBoot+Vue/1.SpringBoot介绍' },
+                    { text: '2.Web入门', link: '/Web开发/SpringBoot+Vue/2.Web入门' },
+                    { text: '3.Web进阶', link: '/Web开发/SpringBoot+Vue/3.Web进阶' },
+                    { text: '4.MybatisPlus', link: '/Web开发/SpringBoot+Vue/4.MybatisPlus' },
+                    { text: '5.Vue介绍', link: '/Web开发/SpringBoot+Vue/5.Vue介绍' },
+                ]
+            }],
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/Reticence6' }
