@@ -130,6 +130,10 @@ export default defineConfig({
                     { text: '3.Web进阶', link: '/Web开发/SpringBoot+Vue/3.Web进阶' },
                     { text: '4.MybatisPlus', link: '/Web开发/SpringBoot+Vue/4.MybatisPlus' },
                     { text: '5.Vue介绍', link: '/Web开发/SpringBoot+Vue/5.Vue介绍' },
+                    { text: '6.Axios网络请求', link: '/Web开发/SpringBoot+Vue/6.Axios网络请求'},
+                    { text: '7.前端路由VueRouter', link: '/Web开发/SpringBoot+Vue/7.前端路由VueRouter'},
+                    { text: '8.状态管理VueX', link: '/Web开发/SpringBoot+Vue/8.状态管理VueX'},
+                    { text: '9.前端数据模拟MockJS', link: '/Web开发/SpringBoot+Vue/9.前端数据模拟MockJS'},
                 ]
             }],
         },
