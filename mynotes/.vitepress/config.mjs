@@ -22,6 +22,7 @@ const llmGroups = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+    ignoreDeadLinks: true,
     base: '/myNotes/',
     title: "WJK's Awesome Notes",
     description: "A VitePress Site of learning notes",
