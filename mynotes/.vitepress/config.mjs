@@ -1,4 +1,24 @@
 import { defineConfig } from 'vitepress'
+import path from 'node:path'
+import { fileURLToPath } from 'url'
+import { getSidebarItems, getGroupedSidebarItems } from './utils/sidebar.mjs'
+import { generatePdfMarkdown } from './utils/pdf-generator.mjs'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const rootDir = path.resolve(__dirname, '..')
+
+// 自动生成 PDF 对应 Markdown
+generatePdfMarkdown(rootDir, 'postgraduate/paperNotes')
+
+// LLM 分组配置
+const llmGroups = {
+    '1': '一、语言模型基础',
+    '2': '二、大语言模型架构',
+    '3': '三、Prompt工程',
+    '4': '四、参数高效微调',
+    '5': '五、模型编辑',
+    '6': '六、检索增强生成RAG'
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -20,16 +40,17 @@ export default defineConfig({
                     { text: '大模型', link: '/ML/LLM/1-1.语言模型基础' },
                 ]
             },
-            // { 
-            //     text: '研究生学习', 
-            //     items:[
-            //         { text: '论文笔记', link: '/postgraduate/paperNotes/20250415.pdf' }
-            //     ]
-            // },
+            { 
+                text: '研究生学习', 
+                items:[
+                    { text: '论文笔记', link: '/postgraduate/paperNotes/20250415-PDG2Seq' }
+                ]
+            },
             {
                 text: 'Web开发',
                 items:[
-                    { text: 'SpringBoot+Vue', link: '/Web开发/SpringBoot+Vue/1.SpringBoot介绍'}
+                    { text: 'SpringBoot+Vue', link: '/Web开发/SpringBoot+Vue/1.SpringBoot介绍'},
+                    { text: 'Java', link: '/Web开发/Java/1.基础语法'}
                 ]
             },
             { text: 'Examples', link: '/examples/markdown-examples' }
@@ -45,97 +66,33 @@ export default defineConfig({
             '/examples/': [{
                 text: 'Examples',
                 collapsed: false,
-                items: [
-                    { text: 'Markdown Examples', link: '/examples/markdown-examples' },
-                    { text: 'Runtime API Examples', link: '/examples/api-examples' }
-                ]
+                items: getSidebarItems(rootDir, 'examples')
             }],
             '/ML/机器学习': [{
                 text: '机器学习',
                 collapsed: false,
-                items: [
-                    { text: '1.机器学习入门', link: '/ML/机器学习/1.机器学习入门' },
-                    { text: '2.预备知识', link: '/ML/机器学习/2.预备知识' },
-                    { text: '3.线性神经网络', link: '/ML/机器学习/3.线性神经网络' },
-                    { text: '68.Transformer', link: '/ML/机器学习/68.Transformer.md' },
-                ]
+                items: getSidebarItems(rootDir, 'ML/机器学习')
             }],
             '/ML/LLM': [{
                 text: 'LLM',
                 collapsed: false,
-                items: [{
-                    text: '一、语言模型基础',
-                    items: [
-                        { text: '1.基本概念', link: '/ML/LLM/1-1.语言模型基础' },
-                        { text: '2.RNN与Transformer', link: '/ML/LLM/1-2.RNN与Transformer' },
-                        { text: '3.语言模型的采样与评测', link: '/ML/LLM/1-3.语言模型的采样' },
-                    ]
-                }, {
-                    text: '二、大语言模型架构',
-                    items: [
-                        { text: '1.大模型架构概述', link: '/ML/LLM/2-1.大模型架构.md' },
-                        { text: '2.基于Encoder-only架构的语言模型', link: '/ML/LLM/2-2.Encoder-only.md' },
-                        { text: '3.基于Encoder-Decoder架构的语言模型', link: '/ML/LLM/2-3.Encoder-Decoder.md' },
-                        { text: '4.基于Decoder-only架构的语言模型', link: '/ML/LLM/2-4.Decoder-only.md' },
-                        { text: '5.Mamba模型', link: '/ML/LLM/2-5.Mamba.md' }
-                    ]
-                }, {
-                    text: '三、Prompt工程',
-                    items: [
-                        { text: '1.Prompt工程概述', link: '/ML/LLM/3-1.Prompt工程简介.md' },
-                        { text: '2.上下文学习', link: '/ML/LLM/3-2.上下文学习.md' },
-                        { text: '3.思维链', link: '/ML/LLM/3-3.思维链.md' },
-                        { text: '4.Prompt技巧及应用', link: '/ML/LLM/3-4.Prompt技巧及应用.md' },
-                    ]
-                }, {
-                    text: '四、参数高效微调',
-                    items: [
-                        { text: '1.参数高效微调概述', link: '/ML/LLM/4-1.参数高效微调简介.md' },
-                        { text: '2.参数附加方法', link: '/ML/LLM/4-2.参数附加方法.md' },
-                        { text: '3.参数选择方法', link: '/ML/LLM/4-3.参数选择方法.md' },
-                        { text: '4.低秩适配方法', link: '/ML/LLM/4-4.低秩适配方法.md' },
-                    ]
-                }, {
-                    text: '五、模型编辑',
-                    items: [
-                        {text: '1.模型编辑的定义与性质', link:'/ML/LLM/5-1.模型编辑的定义与性质'},
-                        {text: '2.T-Patcher和ROME', link:'/ML/LLM/5-2.T-Patcher和ROME'}
-                    ]
-                },{
-                    text: '六、检索增强生成RAG',
-                    items: [
-                        {text: '1.RAG简介', link:'/ML/LLM/6-1.检索增强生成(RAG)简介'},
-                        {text: '2.RAG知识检索', link:'/ML/LLM/6-2.RAG知识检索'},
-                        {text: '3.RAG生成增强', link:'/ML/LLM/6-3.RAG生成增强'},
-                        {text: '4.RAG降本增效', link:'/ML/LLM/6-4.RAG降本增效'},
-                    ]
-                }]
+                items: getGroupedSidebarItems(rootDir, 'ML/LLM', llmGroups)
             }],
             '/postgraduate/paperNotes': [{
                 text: '论文笔记',
                 collapsed: false,
-                items: [
-                    { items: '20250415', link: '/postgraduate/paperNotes/20250415.pdf'},
-                    { items: '20250422', link: '/postgraduate/paperNotes/20250422.pdf'},
-                    { items: '20250429', link: '/postgraduate/paperNotes/20250429.pdf'},
-                ]
+                items: getSidebarItems(rootDir, 'postgraduate/paperNotes')
             }],
             '/Web开发/SpringBoot+Vue': [{
                 text: 'SpringBoot+Vue',
                 collapsed: false,
-                items: [
-                    { text: 'mac配置', link: '/Web开发/mac配置' },
-                    { text: '1.SpringBoot介绍', link: '/Web开发/SpringBoot+Vue/1.SpringBoot介绍' },
-                    { text: '2.Web入门', link: '/Web开发/SpringBoot+Vue/2.Web入门' },
-                    { text: '3.Web进阶', link: '/Web开发/SpringBoot+Vue/3.Web进阶' },
-                    { text: '4.MybatisPlus', link: '/Web开发/SpringBoot+Vue/4.MybatisPlus' },
-                    { text: '5.Vue介绍', link: '/Web开发/SpringBoot+Vue/5.Vue介绍' },
-                    { text: '6.Axios网络请求', link: '/Web开发/SpringBoot+Vue/6.Axios网络请求'},
-                    { text: '7.前端路由VueRouter', link: '/Web开发/SpringBoot+Vue/7.前端路由VueRouter'},
-                    { text: '8.状态管理VueX', link: '/Web开发/SpringBoot+Vue/8.状态管理VueX'},
-                    { text: '9.前端数据模拟MockJS', link: '/Web开发/SpringBoot+Vue/9.前端数据模拟MockJS'},
-                ]
+                items: getSidebarItems(rootDir, 'Web开发/SpringBoot+Vue')
             }],
+            '/Web开发/Java': [{
+                text: 'Java',
+                collapsed: false,
+                items: getSidebarItems(rootDir, 'Web开发/Java')
+            }]
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/Reticence6' }

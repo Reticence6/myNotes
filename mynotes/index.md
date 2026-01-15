@@ -8,11 +8,14 @@ hero:
   tagline: Good Good Study, Day Day Up!
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /examples/markdown-examples
-    - theme: alt
       text: LLM
       link: /ML/LLM/1-1.语言模型基础
+    - theme: brand
+      text: Java
+      link: /Web开发/Java/1.基础语法
+    - theme: alt
+      text: Markdown Examples
+      link: /examples/markdown-examples
       
 
 features:
