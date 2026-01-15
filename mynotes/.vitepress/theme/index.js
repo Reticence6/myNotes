@@ -1,6 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
+import PDFViewer from './components/PDFViewer.vue'
 import './style.css'
 
 /** @type {import('vitepress').Theme} */
@@ -12,6 +13,7 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    // ...
+    // 注册全局组件
+    app.component('PDFViewer', PDFViewer)
   }
 }

@@ -231,3 +231,46 @@ mysql --version
 ```
 
 ![image-20250515104633872](./images/1-5-mysql.png)
+
+# nginx
+
+- nginx-反向代理：反向代理是一种网络架构技术，通过反向代理服务器为后端服务器做代理（安全、灵活、负载均衡）
+
+- Nginx中反向代理的配置：
+
+  ```
+  location ^~ /api/ {
+      rewrite ^/api/(.*)$ /$1 break;
+      proxy_pass http://localhost:8080;
+  }
+  ```
+
+- mac安装和部署nginx
+
+  - 安装：命令`brew install nginx`
+
+  - 命令：
+
+    - 启动指令: `nginx` 或者是 `sudo nginx`
+    - 重启 Nginx 指令: `sudo nginx -s reload`
+    - 停止 Nginx 指令: `sudo nginx -s quit`, 或者直接: `killall nginx`
+    - 执行查找配置文件所在目录指令: `nginx -t`
+      - nginx: the configuration file /opt/homebrew/etc/nginx/nginx.conf syntax is ok
+      - nginx: configuration file /opt/homebrew/etc/nginx/nginx.conf test is successful
+      - 输入open即可打开
+
+  - 部署：
+
+    - 打开安装目录
+      - 执行： `brew info nginx `
+      - 打开：`/opt/homebrew/Cellar/nginx/1.29.3 `
+    - 替换html文件夹
+
+    <img src="./images/image-20251114170629660.png" alt="image-20251114170629660" style="zoom:40%;" />
+
+    - 再次修改 nginx.conf 文件, 目的是找到你的 前端 文件, nginx.conf 的打开方式上面已经说了, 就是打开修改端口号的那个文件
+
+    <img src="./images/image-20251114170828508.png" alt="image-20251114170828508" style="zoom:50%;" />
+
+    - 部署完要记得重启一下 nginx, 重启指令 `sudo nginx -s reload`.
+
