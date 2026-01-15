@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import path from 'node:path'
 import { fileURLToPath } from 'url'
+import fs from 'node:fs'
 import { getSidebarItems, getGroupedSidebarItems } from './utils/sidebar.mjs'
 import { generatePdfMarkdown } from './utils/pdf-generator.mjs'
 
@@ -28,6 +29,28 @@ export default defineConfig({
     description: "A VitePress Site of learning notes",
     // 删除.html后缀
     cleanUrls: true,
+    async buildEnd(siteConfig) {
+        // 复制 PDF 文件到构建目录
+        const pdfDir = path.resolve(rootDir, 'postgraduate/paperNotes')
+        // siteConfig.outDir 是构建输出目录，例如 .vitepress/dist
+        const targetDir = path.resolve(siteConfig.outDir, 'postgraduate/paperNotes')
+
+        if (fs.existsSync(pdfDir)) {
+            if (!fs.existsSync(targetDir)) {
+                fs.mkdirSync(targetDir, { recursive: true })
+            }
+
+            const files = fs.readdirSync(pdfDir)
+            files.forEach(file => {
+                if (file.endsWith('.pdf')) {
+                    const srcPath = path.join(pdfDir, file)
+                    const destPath = path.join(targetDir, file)
+                    fs.copyFileSync(srcPath, destPath)
+                    console.log(`Copied PDF: ${file}`)
+                }
+            })
+        }
+    },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         outlineTitle: '目录',
