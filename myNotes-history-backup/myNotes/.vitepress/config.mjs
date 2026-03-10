@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
 import path from 'node:path'
 import { fileURLToPath } from 'url'
+<<<<<<< HEAD
+=======
 import fs from 'node:fs'
+>>>>>>> feature/update-notes
 import { getSidebarItems, getGroupedSidebarItems } from './utils/sidebar.mjs'
 import { generatePdfMarkdown } from './utils/pdf-generator.mjs'
 
@@ -74,8 +77,7 @@ export default defineConfig({
                 text: 'Web开发',
                 items:[
                     { text: 'SpringBoot+Vue', link: '/Web开发/SpringBoot+Vue/1.SpringBoot介绍'},
-                    { text: 'Java', link: '/Web开发/Java/1.基础语法'},
-                    { text: 'Go', link: '/Web开发/Go/1.入门'}
+                    { text: 'Java', link: '/Web开发/Java/1.基础语法'}
                 ]
             },
             { text: 'Examples', link: '/examples/markdown-examples' }
