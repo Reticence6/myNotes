@@ -117,6 +117,11 @@ export default defineConfig({
                 text: 'Java',
                 collapsed: false,
                 items: getSidebarItems(rootDir, 'Web开发/Java')
+            }],
+            '/Web开发/go': [{
+                text: 'Go',
+                collapsed: false,
+                items: getSidebarItems(rootDir, 'Web开发/go')
             }]
         },
         socialLinks: [
