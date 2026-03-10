@@ -75,7 +75,7 @@ export default defineConfig({
                 items:[
                     { text: 'SpringBoot+Vue', link: '/Web开发/SpringBoot+Vue/1.SpringBoot介绍'},
                     { text: 'Java', link: '/Web开发/Java/1.基础语法'},
-                    { text: 'Go', link: '/Web开发/Go/1.入门'}
+                    { text: 'Go', link: '/Web开发/go/1.入门'}
                 ]
             },
             { text: 'Examples', link: '/examples/markdown-examples' }
